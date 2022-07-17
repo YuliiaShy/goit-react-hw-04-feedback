@@ -35,12 +35,14 @@ function App () {
   const countPositiveFeedback = () => {
     return countTotalFeedback > 0 ? Math.floor((good / countTotalFeedback) * 100) : 0;
   };
+
+  const options = Object.keys({good, neutral, bad})
  
     return (
       <Container>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            options={['good', 'neutral', 'bad']}
+            options={options}
             onLeaveFeedback={onButtonFeedbackClick}
           />
         </Section>
